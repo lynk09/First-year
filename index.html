@@ -1,15 +1,66 @@
-  <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Nuestro Primer Año</title>
-        </head>
-        <style>
-        
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nuestro Primer Año</title>
 
-        </style>
-        
-        <h1 style="color:purple;">Hola Amor</h1>
-        <img src="img1.jpeg" width="150" alt="Fotos juntos">
-        <h2 style="color:rgb(0, 0, 0)">Hace un año comenzaste a ser alguine muy importante en mi vida.</h2>
-        </body>
-    </html>
+    <style>
+        body {
+            background-color: pink;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        h1 {
+            color: purple;
+            margin-top: 50px;
+        }
+
+        .corazon {
+            position: fixed;
+            color: red;
+            font-size: 20px;
+            animation: subir 5s linear infinite;
+        }
+
+        @keyframes subir {
+            0% {
+                bottom: -10px;
+                opacity: 1;
+            }
+            100% {
+                bottom: 100%;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Hola Amor 💕</h1>
+
+<img src="img1.jpeg" width="250">
+<img src="img2.jpeg" width="250">
+<img src="img3.jpeg" width="250">
+
+<script>
+    function crearCorazon() {
+        const corazon = document.createElement("div");
+        corazon.classList.add("corazon");
+        corazon.innerHTML = "💖";
+        corazon.style.left = Math.random() * 100 + "vw";
+        corazon.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+        document.body.appendChild(corazon);
+
+        setTimeout(() => {
+            corazon.remove();
+        }, 5000);
+    }
+
+    setInterval(crearCorazon, 300);
+</script>
+
+</body>
+</html>
